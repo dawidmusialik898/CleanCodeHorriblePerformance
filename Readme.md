@@ -18,17 +18,22 @@ Intel Core i5-7200U CPU 2.50GHz (Max: 2.71GHz) (Kaby Lake), 1 CPU, 2 logical cor
 
 | Method                                | Mean      | Error    | StdDev   |
 |-------------------------------------- |----------:|---------:|---------:|
-| CleanCode                             | 183.14 ns | 3.305 ns | 4.180 ns |
-| CleanCodeWithoutPoly                  | 297.47 ns | 5.846 ns | 6.003 ns |
-| CleanCodeWithoutPolyAndKnowingInsides |  76.96 ns | 1.188 ns | 1.111 ns |
+| GetAreaVirtualFunctions               | 183.14 ns | 3.305 ns | 4.180 ns |
+| GetAreaSwitch                         | 297.47 ns | 5.846 ns | 6.003 ns |
+| GetAreaIf                             | 103.91 ns | 1.200 ns | 1.123 ns |
+| GetAreaTable                          |  76.96 ns | 1.188 ns | 1.111 ns |
 
 Converting it to mentioned video mesure that is cycle/shape:
 1. My processor have 2.5-2.71 cycles/ns. I'll be using max value in calculations.
 2. Benchmark was run for 64 shapes.
-3. Resulting table:
+3. Results presented in (cy)cles per (sh)ape.
+4. Resulting table:
 
-| Method                                | Mean in cycles| Notes
+| Method                                | Mean          | Notes
 |-------------------------------------- |---------------|------------------------
-| CleanCode                             |  7.72 cycle   | 183/64*2.7
-| CleanCodeWithoutPoly                  | 12.52 cycle   | 297/64*2.7
-| CleanCodeWithoutPolyAndKnowingInsides |  3.21 cycle   | 76/64*2.7
+| GetAreaVirtualFunction                |  7.72 cy/sh   | 183/64*2.7
+| GetAreaSwitch                         | 12.52 cy/sh   | 297/64*2.7
+| GetAreaIf                             |  4.35 cy/sh   | 103/64*2.7
+| GetAreaTable                          |  3.21 cy/sh   | 76/64*2.7
+
+Open question why does swtich perfrom so badly?

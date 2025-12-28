@@ -29,8 +29,10 @@ public class ExecutorBenchmark
 		new Square(1.23),new Square(2.55),new Square(4.345),new Square(6.634),
 		new Circle(1.123),new Circle(2.64),new Circle(4.77),new Circle(6.99),
 	];
+
 	[Benchmark]
-	public double CleanCode() => Executor.ExecuteCleanCode(shapes);
+	public double GetAreaVirtualFunctions() =>
+		Executor.GetAreaVirtualFunctions(shapes);
 
 	private readonly UnionShape[] unionShapes = [
 		new UnionShape(ShapeType.Rectangle,1.22,1.47),
@@ -100,10 +102,14 @@ public class ExecutorBenchmark
 	];
 
 	[Benchmark]
-	public double CleanCodeWithoutPoly() =>
-	Executor.ExecuteCleanCodeWithoutPoly(unionShapes);
+	public double GetAreaSwitch() =>
+		Executor.GetAreaSwitch(unionShapes);
 	
 	[Benchmark]
-	public double CleanCodeWithoutPolyAndKnowingInsides()=>
-	Executor.ExecuteCleanCodeWithoutPollyAndKnowingWhatsInside(unionShapes);
+	public double GetAreaIf() =>
+		Executor.GetAreaIf(unionShapes);
+
+	[Benchmark]
+	public double GetAreaTable() =>
+		Executor.GetAreaTable(unionShapes);
 }
