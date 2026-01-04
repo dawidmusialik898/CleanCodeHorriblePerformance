@@ -1,6 +1,7 @@
 using BenchmarkDotNet.Attributes;
 namespace CleanCode;
 
+[DisassemblyDiagnoser(maxDepth:2, exportCombinedDisassemblyReport:true)]
 public class ExecutorBenchmark
 {
 	private readonly Shape[] shapes = [
@@ -104,6 +105,10 @@ public class ExecutorBenchmark
 	[Benchmark]
 	public double GetAreaSwitch() =>
 		Executor.GetAreaSwitch(unionShapes);
+	
+	[Benchmark]
+	public double GetAreaSwitchInline() =>
+		Executor.GetAreaSwitchInlined(unionShapes);
 	
 	[Benchmark]
 	public double GetAreaIf() =>

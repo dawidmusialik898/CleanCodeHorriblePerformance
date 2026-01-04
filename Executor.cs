@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 namespace CleanCode;
 public static class Executor
 {
@@ -20,6 +21,23 @@ public static class Executor
 		return sum;
 	}
 	private static double AreaSwitch(UnionShape shape) => shape.type switch
+	{
+		ShapeType.Rectangle => shape.width*shape.length,
+		ShapeType.Triangle => shape.width*shape.length * 0.5d,
+		ShapeType.Circle => shape.width*shape.width * 3.14d,
+		ShapeType.Square => shape.width*shape.width
+	};
+	public static double GetAreaSwitchInlined(UnionShape[] shapes)
+	{
+		double sum = 0d;
+		foreach(var shape in shapes)
+		{
+			sum += AreaSwitchInlined(shape);
+		}
+		return sum;
+	}
+	[MethodImplAttribute(MethodImplOptions.AggressiveInlining)]
+	private static double AreaSwitchInlined(UnionShape shape) => shape.type switch
 	{
 		ShapeType.Rectangle => shape.width*shape.length,
 		ShapeType.Triangle => shape.width*shape.length * 0.5d,
