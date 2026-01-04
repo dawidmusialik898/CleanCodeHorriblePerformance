@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output CleanCode.ExecutorBenchmark-20260104-145512</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="5">CleanCode.ExecutorBenchmark-20260104-145512</th></tr>
+<tr>
+<th>GetAreaVirtualFunctions .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3</th>
+<th>GetAreaSwitch .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3</th>
+<th>GetAreaSwitchInline .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3</th>
+<th>GetAreaIf .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3</th>
+<th>GetAreaTable .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+CleanCode.ExecutorBenchmark.GetAreaVirtualFunctions()
+mov       rdi,[rdi+8]
+jmp       qword ptr [78B045E36C10]
+
+CleanCode.Executor.GetAreaVirtualFunctions(CleanCode.Shape[])
+push      rbp
+push      r15
+push      r14
+push      rbx
+push      rax
+lea       rbp,[rsp+20]
+vxorps    xmm0,xmm0,xmm0
+vmovsd    qword ptr [rbp-20],xmm0
+mov       ebx,[rdi+8]
+test      ebx,ebx
+jle       short 000078B0453BF303
+mov       r15,offset MT_CleanCode.Square
+lea       r14,[rdi+10]
+jmp       short 000078B0453BF2E9
+mov       rax,[rax+40]
+call      qword ptr [rax+20]
+vmovsd    xmm1,qword ptr [rbp-20]
+vaddsd    xmm1,xmm1,xmm0
+add       r14,8
+dec       ebx
+je        short 000078B0453BF308
+vmovsd    qword ptr [rbp-20],xmm1
+mov       rdi,[r14]
+mov       rax,[rdi]
+cmp       rax,r15
+jne       short 000078B0453BF2CC
+vmovsd    xmm1,qword ptr [rdi+8]
+vmulsd    xmm1,xmm1,xmm1
+vmovaps   xmm0,xmm1
+jmp       short 000078B0453BF2D3
+vmovsd    xmm1,qword ptr [rbp-20]
+vmovaps   xmm0,xmm1
+add       rsp,8
+pop       rbx
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+CleanCode.ExecutorBenchmark.GetAreaSwitch()
+mov       rdi,[rdi+10]
+jmp       qword ptr [7EDCD9026B08]
+
+CleanCode.Executor.GetAreaSwitch(CleanCode.UnionShape[])
+push      rbp
+push      r15
+push      rbx
+sub       rsp,20
+lea       rbp,[rsp+30]
+vxorps    xmm0,xmm0,xmm0
+vmovsd    qword ptr [rbp-18],xmm0
+mov       ebx,[rdi+8]
+test      ebx,ebx
+jle       short 00007EDCD85AF28E
+lea       r15,[rdi+10]
+vmovdqu   xmm1,xmmword ptr [r15]
+vmovdqu   xmmword ptr [rsp],xmm1
+mov       rax,[r15+10]
+mov       [rsp+10],rax
+call      qword ptr [7EDCD9026B20]
+vaddsd    xmm0,xmm0,qword ptr [rbp-18]
+add       r15,18
+dec       ebx
+je        short 00007EDCD85AF293
+vmovsd    qword ptr [rbp-18],xmm0
+jmp       short 00007EDCD85AF261
+vmovsd    xmm0,qword ptr [rbp-18]
+add       rsp,20
+pop       rbx
+pop       r15
+pop       rbp
+ret
+
+CleanCode.Executor.AreaSwitch(CleanCode.UnionShape)
+push      rbp
+push      rbx
+push      rax
+lea       rbp,[rsp+10]
+mov       ebx,[rbp+10]
+vmovsd    xmm0,qword ptr [rbp+18]
+cmp       ebx,3
+ja        short 00007EDCD85AF1BC
+mov       edi,ebx
+lea       rax,[7EDCD85AF1D8]
+mov       eax,[rax+rdi*4]
+lea       rcx,[7EDCD85AF168]
+add       rax,rcx
+jmp       rax
+vmulsd    xmm0,xmm0,qword ptr [rbp+20]
+add       rsp,8
+pop       rbx
+pop       rbp
+ret
+vmulsd    xmm0,xmm0,xmm0
+vmulsd    xmm0,xmm0,qword ptr [7EDCD85AF1E8]
+jmp       short 00007EDCD85AF192
+vmulsd    xmm0,xmm0,xmm0
+jmp       short 00007EDCD85AF192
+vmulsd    xmm0,xmm0,qword ptr [rbp+20]
+vmulsd    xmm0,xmm0,qword ptr [7EDCD85AF1F0]
+jmp       short 00007EDCD85AF192
+mov       rdi,offset MT_CleanCode.ShapeType
+call      CORINFO_HELP_NEWSFAST
+mov       [rax+8],ebx
+mov       rdi,rax
+call      qword ptr [7EDCD9026B38]
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+CleanCode.ExecutorBenchmark.GetAreaSwitchInline()
+mov       rdi,[rdi+10]
+jmp       qword ptr [73AAB4846C10]
+
+CleanCode.Executor.GetAreaSwitchInlined(CleanCode.UnionShape[])
+push      rbp
+push      rbx
+push      rax
+lea       rbp,[rsp+10]
+vxorps    xmm0,xmm0,xmm0
+mov       eax,[rdi+8]
+test      eax,eax
+jle       short 000073AAB3DCF2B4
+add       rdi,10
+jmp       short 000073AAB3DCF277
+vmulsd    xmm1,xmm1,xmm2
+vmulsd    xmm1,xmm1,qword ptr [73AAB3DCF2D8]
+jmp       short 000073AAB3DCF26B
+vmulsd    xmm1,xmm1,xmm2
+vaddsd    xmm0,xmm0,xmm1
+add       rdi,18
+dec       eax
+je        short 000073AAB3DCF2B4
+mov       ebx,[rdi]
+vmovsd    xmm1,qword ptr [rdi+8]
+vmovsd    xmm2,qword ptr [rdi+10]
+cmp       ebx,3
+ja        short 000073AAB3DCF2BB
+mov       ecx,ebx
+lea       rdx,[73AAB3DCF2E0]
+mov       edx,[rdx+rcx*4]
+lea       rsi,[73AAB3DCF248]
+add       rdx,rsi
+jmp       rdx
+vmulsd    xmm1,xmm1,xmm1
+jmp       short 000073AAB3DCF26B
+vmulsd    xmm1,xmm1,xmm1
+vmulsd    xmm1,xmm1,qword ptr [73AAB3DCF2F0]
+jmp       short 000073AAB3DCF26B
+add       rsp,8
+pop       rbx
+pop       rbp
+ret
+mov       rdi,offset MT_CleanCode.ShapeType
+call      CORINFO_HELP_NEWSFAST
+mov       [rax+8],ebx
+mov       rdi,rax
+call      qword ptr [73AAB4846C40]
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+CleanCode.ExecutorBenchmark.GetAreaIf()
+mov       rdi,[rdi+10]
+jmp       qword ptr [7BA2B8016B08]
+
+CleanCode.Executor.GetAreaIf(CleanCode.UnionShape[])
+push      rbp
+mov       rbp,rsp
+vxorps    xmm0,xmm0,xmm0
+mov       eax,[rdi+8]
+test      eax,eax
+jle       short 00007BA2B759F1D1
+add       rdi,10
+jmp       short 00007BA2B759F190
+nop       word ptr [rax+rax]
+vmulsd    xmm3,xmm1,xmm2
+vaddsd    xmm0,xmm0,xmm3
+add       rdi,18
+dec       eax
+je        short 00007BA2B759F1D1
+mov       ecx,[rdi]
+vmovsd    xmm1,qword ptr [rdi+8]
+vmovsd    xmm2,qword ptr [rdi+10]
+test      ecx,ecx
+je        short 00007BA2B759F180
+cmp       ecx,1
+je        short 00007BA2B759F1C3
+cmp       ecx,3
+je        short 00007BA2B759F1B5
+cmp       ecx,2
+jne       short 00007BA2B759F1D3
+vmulsd    xmm3,xmm1,xmm1
+jmp       short 00007BA2B759F184
+vmulsd    xmm3,xmm1,xmm1
+vmulsd    xmm3,xmm3,qword ptr [7BA2B759F1E0]
+jmp       short 00007BA2B759F184
+vmulsd    xmm3,xmm1,xmm2
+vmulsd    xmm3,xmm3,qword ptr [7BA2B759F1E8]
+jmp       short 00007BA2B759F184
+pop       rbp
+ret
+vxorps    xmm3,xmm3,xmm3
+jmp       short 00007BA2B759F184
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+CleanCode.ExecutorBenchmark.GetAreaTable()
+mov       rdi,[rdi+10]
+jmp       qword ptr [7CFD78646C10]
+
+CleanCode.Executor.GetAreaTable(CleanCode.UnionShape[])
+push      rbp
+mov       rbp,rsp
+vxorps    xmm0,xmm0,xmm0
+mov       eax,[rdi+8]
+test      eax,eax
+jle       short 00007CFD77BCF247
+mov       rcx,7CFC7A001378
+mov       rcx,[rcx]
+add       rdi,10
+mov       edx,[rdi]
+vmovsd    xmm1,qword ptr [rdi+8]
+vmovsd    xmm2,qword ptr [rdi+10]
+vmulsd    xmm1,xmm1,xmm2
+cmp       edx,4
+jae       short 00007CFD77BCF249
+vmulsd    xmm1,xmm1,qword ptr [rcx+rdx*8+10]
+vaddsd    xmm0,xmm1,xmm0
+add       rdi,18
+dec       eax
+jne       short 00007CFD77BCF220
+pop       rbp
+ret
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

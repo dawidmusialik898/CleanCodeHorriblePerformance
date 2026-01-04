@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>CleanCode.ExecutorBenchmark-20260103-165933</title>
+<title>CleanCode.ExecutorBenchmark-20260104-145512</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -15,20 +15,20 @@
 <pre><code>
 BenchmarkDotNet v0.15.8, Linux Ubuntu 24.04.3 LTS (Noble Numbat)
 Intel Core i5-7200U CPU 2.50GHz (Max: 2.71GHz) (Kaby Lake), 1 CPU, 2 logical cores and 1 physical core
-.NET SDK 8.0.404
-  [Host]     : .NET 8.0.11 (8.0.11, 8.0.1124.51707), X64 RyuJIT x86-64-v3
-  DefaultJob : .NET 8.0.11 (8.0.11, 8.0.1124.51707), X64 RyuJIT x86-64-v3
+.NET SDK 10.0.100
+  [Host]     : .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3
+  DefaultJob : .NET 10.0.0 (10.0.0, 10.0.25.52411), X64 RyuJIT x86-64-v3
 </code></pre>
 <pre><code></code></pre>
 
 <table>
 <thead><tr><th>Method           </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Code Size</th>
 </tr>
-</thead><tbody><tr><td>GetAreaVirtualFunctions</td><td>186.39 ns</td><td>3.621 ns</td><td>4.024 ns</td><td>154 B</td>
-</tr><tr><td>GetAreaSwitch</td><td>317.35 ns</td><td>6.190 ns</td><td>7.128 ns</td><td>255 B</td>
-</tr><tr><td>GetAreaSwitchInline</td><td>134.28 ns</td><td>2.283 ns</td><td>1.907 ns</td><td>169 B</td>
-</tr><tr><td>GetAreaIf</td><td>108.62 ns</td><td>2.211 ns</td><td>2.271 ns</td><td>128 B</td>
-</tr><tr><td>GetAreaTable</td><td>79.63 ns</td><td>1.626 ns</td><td>1.521 ns</td><td>105 B</td>
+</thead><tbody><tr><td>GetAreaVirtualFunctions</td><td>181.70 ns</td><td>3.616 ns</td><td>3.713 ns</td><td>129 B</td>
+</tr><tr><td>GetAreaSwitch</td><td>234.89 ns</td><td>4.579 ns</td><td>4.703 ns</td><td>222 B</td>
+</tr><tr><td>GetAreaSwitchInline</td><td>123.79 ns</td><td>2.393 ns</td><td>2.121 ns</td><td>161 B</td>
+</tr><tr><td>GetAreaIf</td><td>91.69 ns</td><td>1.152 ns</td><td>0.962 ns</td><td>131 B</td>
+</tr><tr><td>GetAreaTable</td><td>73.74 ns</td><td>1.513 ns</td><td>1.554 ns</td><td>89 B</td>
 </tr></tbody></table>
 </body>
 </html>
